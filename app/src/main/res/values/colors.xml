@@ -10,4 +10,8 @@
     <color name="app_black">#FF333333</color>
     <color name="app_green">#FF51B44E</color>
     <color name="app_yellow">#FFFFD02E</color>
+    <color name="background">#FF48484A</color>
+    <color name="light_gray">#FFE5E5EA</color>
+    <color name="text_gray">#FF9FA2B4</color>
+    <color name="mint">#78CBBB</color>
 </resources>
