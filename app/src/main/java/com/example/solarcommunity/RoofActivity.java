@@ -16,6 +16,10 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -147,8 +151,6 @@ public class RoofActivity extends AppCompatActivity {
     // Django 서버로 이미지 전송
     private void uploadImage(byte[] imageBytes){
 
-        Log.d("1","1");
-
         HttpLoggingInterceptor interceptor = new HttpLoggingInterceptor();
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY);
         OkHttpClient client = new OkHttpClient.Builder()
@@ -167,10 +169,8 @@ public class RoofActivity extends AppCompatActivity {
 
 
         DjangoAPI postApi= retrofit.create(DjangoAPI.class);
-        Log.d("2","retrofit 생성");
 
-        RequestBody requestBody = RequestBody.create(imageBytes, MediaType.parse("image/jpeg"));
-        Log.d("3", "requestBody 생성");
+        RequestBody requestBody = RequestBody.create(imageBytes, MediaType.parse("image/jpg"));
 
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file","image.jpg",requestBody);
 
@@ -187,18 +187,33 @@ public class RoofActivity extends AppCompatActivity {
                 ResponseBody body = response.body();
 
                 String result = null;
+
                 try {
-                    result = body.string();
-                } catch (IOException e) {
+                    InputStream is = body.byteStream();
+                    int fileSize = is.available();
+
+                    byte[] buffer = new byte[fileSize];
+                    is.read(buffer);
+                    is.close();
+
+                    result = new String(buffer, "UTF-8");
+
+                    JSONObject jsonObject = new JSONObject(result);
+                    Object img = jsonObject.get("img");
+                    Object number = jsonObject.get("number");
+
+                    Log.d("number", number.toString());
+
+                    byte[] byteArray = Base64.decode(img.toString(), Base64.DEFAULT);
+
+                    bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+
+                    PreviewImage.setImageBitmap(bitmap);
+
+                } catch (IOException | JSONException e) {
                     e.printStackTrace();
                 }
-                Log.d("good", result);
 
-                byte[] byteArray = Base64.decode(result, Base64.DEFAULT);
-
-                bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-
-                PreviewImage.setImageBitmap(bitmap);
 
             }
             @Override
@@ -207,8 +222,6 @@ public class RoofActivity extends AppCompatActivity {
                 //Log.d("fail", "fail");
             }
         });
-
-        Log.d("end","end");
 
     }
 
