@@ -12,6 +12,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,6 +45,9 @@ public class RoofActivity extends AppCompatActivity {
     // Preview Image
     ImageView PreviewImage;
 
+    // TextView
+    TextView tv_cost, tv_area, tv_num;
+
     int REQUEST_CODE = 200;
     Uri selectedImage;
     String mediaPath;
@@ -61,6 +65,11 @@ public class RoofActivity extends AppCompatActivity {
         BSelectImage = findViewById(R.id.btn_selectImage);
         PreviewImage = findViewById(R.id.PreviewImage);
         BUploadImage = findViewById(R.id.btn_uploadImage);
+
+        // textview
+        tv_area = findViewById(R.id.tv_area);
+        tv_num = findViewById(R.id.tv_num);
+        tv_cost = findViewById(R.id.tv_cost);
 
         // handle the Choose Image button to trigger the image chooser function
         BSelectImage.setOnClickListener(new View.OnClickListener() {
@@ -209,6 +218,7 @@ public class RoofActivity extends AppCompatActivity {
                     bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
 
                     PreviewImage.setImageBitmap(bitmap);
+                    tv_num.setText(number.toString()+" 개");
 
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();
