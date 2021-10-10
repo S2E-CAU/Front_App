@@ -27,8 +27,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="30dp"
             android:background="@drawable/s2e_icon"
-            android:backgroundTint="@null"
-            android:src="@drawable/back" />
+            android:backgroundTint="@null" />
     </FrameLayout>
 
     <TextView
@@ -56,6 +55,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <com.github.mikephil.charting.charts.LineChart
+            android:id="@+id/line_solar"
             android:layout_width="300dp"
             android:layout_height="244dp"
             android:layout_gravity="center_horizontal"
@@ -63,13 +63,26 @@
             android:layout_marginBottom="10dp"
             android:background="@color/white" />
 
-        <TextView
-            android:layout_width="wrap_content"
+        <FrameLayout
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginBottom="10dp"
-            android:text="현재 모터 이상 없음"
-            android:textColor="@color/app_black" />
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="현재 모터 이상 없음"
+                android:textColor="@color/app_black" />
+
+            <ImageButton
+                android:id="@+id/btn_update"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:background="@drawable/refresh"
+                android:backgroundTint="@null" />
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="300dp"

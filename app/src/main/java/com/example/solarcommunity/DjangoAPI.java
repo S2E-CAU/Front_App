@@ -13,6 +13,7 @@ public interface DjangoAPI {
     @Multipart
     @POST("api/map")
     Call <ResponseBody> uploadFile(@Part MultipartBody.Part file);
-
     
+    @POST("api/solar")
+    Call <ResponseBody> getSolarPower();
 }
