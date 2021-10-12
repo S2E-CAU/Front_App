@@ -144,7 +144,6 @@ public class MainActivity extends AppCompatActivity {
                     result = new String(buffer, "UTF-8");
 
                     jsonParsing(result);
-
                     spLineChart();
 
                 } catch (IOException e) {

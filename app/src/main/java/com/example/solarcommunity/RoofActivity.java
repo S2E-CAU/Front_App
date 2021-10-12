@@ -183,7 +183,9 @@ public class RoofActivity extends AppCompatActivity {
 
         MultipartBody.Part fileToUpload = MultipartBody.Part.createFormData("file","image.jpg",requestBody);
 
+
         Call<ResponseBody> call = postApi.uploadFile(fileToUpload);
+        //Call<ResponseBody> call = postApi.getImg();
         call.enqueue(new Callback<ResponseBody>() {
             @Override
             public void onResponse(Call<ResponseBody> call, retrofit2.Response<ResponseBody> response) {
