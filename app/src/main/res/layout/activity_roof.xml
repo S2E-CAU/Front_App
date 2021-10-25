@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background"
     tools:context=".RoofActivity"
-    tools:ignore="HardcodedText"
-    android:background="@color/background">
+    tools:ignore="HardcodedText">
 
     <!--Button to open the image selector-->
 
@@ -43,7 +42,7 @@
 
     <Button
         android:id="@+id/btn_uploadImage"
-        android:layout_width="314dp"
+        android:layout_width="340dp"
         android:layout_height="56dp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="72dp"
@@ -108,8 +107,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="4"
+                android:gravity="center_vertical"
                 android:text="설치 가능 설비 개수"
                 android:textColor="#000000"
                 android:textSize="18sp"
@@ -138,8 +137,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginLeft="10dp"
-                android:gravity="center_vertical"
                 android:layout_weight="4"
+                android:gravity="center_vertical"
                 android:text="설치 비용"
                 android:textColor="#000000"
                 android:textSize="18sp"
@@ -158,23 +157,6 @@
         </LinearLayout>
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btn_selectImage"
-        android:layout_width="350dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/radius"
-        android:backgroundTint="@color/black"
-        android:text="주소를 입력하세요."
-        android:textColor="@android:color/white"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout3"
-        tools:backgroundTint="@color/light_gray" />
-
     <ImageView
         android:id="@+id/PreviewImage"
         android:layout_width="300dp"
@@ -185,6 +167,35 @@
         android:backgroundTint="@color/light_gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_selectImage" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout4" />
+
+    <FrameLayout
+        android:id="@+id/frameLayout4"
+        android:layout_width="340dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/radius"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout3">
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_horizontal"
+            android:hint="주소를 입력하세요."
+            android:textColorHint="@color/text_gray"
+            android:textSize="16sp" />
+
+        <ImageButton
+            android:id="@+id/btn_search"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="right|center_vertical"
+            android:layout_margin="10dp"
+            android:background="@drawable/search" />
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

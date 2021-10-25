@@ -8,16 +8,18 @@ import retrofit2.http.POST;
 import retrofit2.http.Part;
 
 public interface DjangoAPI {
-    //String DJANGO_SITE="http://10.0.2.2:8000/";
-    String DJANGO_SITE="http://ec2-13-125-79-244.ap-northeast-2.compute.amazonaws.com";
+    String DJANGO_SITE="http://10.0.2.2:8000/";
+    //String DJANGO_SITE="http://ec2-13-125-79-244.ap-northeast-2.compute.amazonaws.com";
 
-    @Multipart
     @POST("api/map")
-    Call <ResponseBody> uploadFile(@Part MultipartBody.Part file);
+    Call <ResponseBody> uploadFile();
     
     @POST("api/solar")
     Call <ResponseBody> getSolarPower();
 
     @POST("api/test")
     Call <ResponseBody> getImg();
+
+    @POST("api/address")
+    Call <ResponseBody> requestImage();
 }
