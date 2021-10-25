@@ -11,6 +11,7 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -49,6 +50,7 @@ public class RoofActivity extends AppCompatActivity {
 
     // TextView
     TextView tv_cost, tv_area, tv_num;
+    EditText et_address;
 
     int REQUEST_CODE = 200;
     Uri selectedImage;
@@ -73,17 +75,24 @@ public class RoofActivity extends AppCompatActivity {
         tv_num = findViewById(R.id.tv_num);
         tv_cost = findViewById(R.id.tv_cost);
 
+        et_address = findViewById(R.id.et_address);
+
         // handle the Choose Image button to trigger the image chooser function
         BSearchAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getAddressImage();
+
+                if(!et_address.getText().toString().equals(""))
+                    getAddressImage();
+                else Toast.makeText(RoofActivity.this, "주소를 입력하세요.", Toast.LENGTH_SHORT).show();
             }
         });
 
         BUploadImage.setOnClickListener(new View.OnClickListener(){
             @Override
-            public void onClick(View v) { uploadImage(); }
+            public void onClick(View v) {
+                uploadImage();
+            }
         });
 
     }
@@ -145,24 +154,6 @@ public class RoofActivity extends AppCompatActivity {
         });
 
     }
-
-    public byte[] getBytes(InputStream is) throws IOException {
-        ByteArrayOutputStream byteBuff = new ByteArrayOutputStream();
-
-        int buffSize = 1024;
-        byte[] buff = new byte[buffSize];
-
-        int len = 0;
-        while ((len = is.read(buff)) != -1) {
-            byteBuff.write(buff, 0, len);
-        }
-
-        Log.d("bytes_image", byteBuff.toByteArray().toString());
-
-        return byteBuff.toByteArray();
-    }
-
-
 
     // Django 서버로 이미지 전송
     private void uploadImage(){

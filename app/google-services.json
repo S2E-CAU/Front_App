@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "672627597189",
+    "project_id": "s2e-solar",
+    "storage_bucket": "s2e-solar.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:672627597189:android:a7fbdc5951e84291adeeec",
+        "android_client_info": {
+          "package_name": "com.example.solarcommunity"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "672627597189-077n67spgnbr7radbsqq96qcjtat9uup.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.solarcommunity",
+            "certificate_hash": "a100b8e309b344ea59c47dd6747088b3d3149156"
+          }
+        },
+        {
+          "client_id": "672627597189-dkdqt0kma1aqa6tfakb5kpvmkunj0vuh.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJBuJEFdnL4hs-ar3oc5t53YXUgLpuWP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "672627597189-dkdqt0kma1aqa6tfakb5kpvmkunj0vuh.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
