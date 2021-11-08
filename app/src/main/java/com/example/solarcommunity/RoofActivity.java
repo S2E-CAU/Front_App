@@ -91,10 +91,21 @@ public class RoofActivity extends AppCompatActivity {
         BUploadImage.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                uploadImage();
+                if(!et_address.getText().toString().equals("")) {
+                    uploadImage();
+
+                }else Toast.makeText(RoofActivity.this, "주소를 입력하세요.", Toast.LENGTH_SHORT).show();
             }
         });
 
+    }
+
+    private void setTextView(String number){
+        int num = Integer.parseInt(number);
+        double area = (double)num * 6.5;
+        area = Math.round(area*100)/100;
+        tv_area.setText(Double.toString(area)+" m^2");
+        tv_cost.setText("324 만원");
     }
 
     // get Image of the input address
@@ -116,8 +127,7 @@ public class RoofActivity extends AppCompatActivity {
 
 
         DjangoAPI postApi= retrofit.create(DjangoAPI.class);
-
-        Call<ResponseBody> call = postApi.requestImage();
+        Call<ResponseBody> call = postApi.requestImage(et_address.getText().toString());
 
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -175,7 +185,7 @@ public class RoofActivity extends AppCompatActivity {
 
         DjangoAPI postApi= retrofit.create(DjangoAPI.class);
 
-        Call<ResponseBody> call = postApi.uploadFile();
+        Call<ResponseBody> call = postApi.uploadFile(et_address.getText().toString());
         //Call<ResponseBody> call = postApi.getImg();
         call.enqueue(new Callback<ResponseBody>() {
             @Override
@@ -212,6 +222,7 @@ public class RoofActivity extends AppCompatActivity {
 
                     PreviewImage.setImageBitmap(bitmap);
                     tv_num.setText(number.toString()+" 개");
+                    setTextView(number.toString());
 
                 } catch (IOException | JSONException e) {
                     e.printStackTrace();

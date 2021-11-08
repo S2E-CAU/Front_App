@@ -15,7 +15,7 @@
     <FrameLayout
         android:id="@+id/frameLayout"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -34,7 +34,6 @@
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
         android:text="오늘 내가 발전시킨 태양광 에너지는?"
         android:textColor="#FFFFFF"
         android:textSize="22sp"
@@ -103,7 +102,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:text="소비량"
+                    android:text="발전량"
                     android:textColor="@color/text_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -114,9 +113,9 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="2"
-                    android:text="00"
+                    android:text="106.0W"
                     android:textColor="@color/app_black"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
             </LinearLayout>
 
@@ -133,7 +132,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:layout_weight="1"
-                    android:text="발전량"
+                    android:text="누적발전량"
                     android:textColor="@color/text_gray"
                     android:textSize="20sp"
                     android:textStyle="bold" />
@@ -144,9 +143,9 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="2"
-                    android:text="00"
+                    android:text="1.8KWh"
                     android:textColor="@color/app_black"
-                    android:textSize="40sp"
+                    android:textSize="30sp"
                     android:textStyle="bold" />
             </LinearLayout>
         </LinearLayout>
