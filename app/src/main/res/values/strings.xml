@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Solar Community</string>
+    <string name="notice">* 해당 수익은 예측된 다음 날의 가격 중 최대 가격을 이용하여 계산함.</string>
 </resources>

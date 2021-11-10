@@ -49,7 +49,7 @@ public class RoofActivity extends AppCompatActivity {
     ImageView PreviewImage;
 
     // TextView
-    TextView tv_cost, tv_area, tv_num;
+    TextView tv_cost, tv_preProfit, tv_num, tv_pv;
     EditText et_address;
 
     int REQUEST_CODE = 200;
@@ -71,9 +71,10 @@ public class RoofActivity extends AppCompatActivity {
         BUploadImage = findViewById(R.id.btn_uploadImage);
 
         // textview
-        tv_area = findViewById(R.id.tv_area);
+        tv_preProfit = findViewById(R.id.tv_predict_profit);
         tv_num = findViewById(R.id.tv_num);
         tv_cost = findViewById(R.id.tv_cost);
+        tv_pv = findViewById(R.id.tv_pv);
 
         et_address = findViewById(R.id.et_address);
 
@@ -102,10 +103,15 @@ public class RoofActivity extends AppCompatActivity {
 
     private void setTextView(String number){
         int num = Integer.parseInt(number);
-        double area = (double)num * 6.5;
-        area = Math.round(area*100)/100;
-        tv_area.setText(Double.toString(area)+" m^2");
-        tv_cost.setText("324 만원");
+        int pv_num = num * 8;
+        int price = 80 * num;
+        double predict_amount = (double)num * 13.7;
+        predict_amount = Math.ceil(predict_amount);
+        double cost = predict_amount * 71.873 *30;
+        tv_num.setText(pv_num+" 개");
+        tv_cost.setText(price+" 만원");
+        tv_pv.setText(predict_amount + " KWh");
+        tv_preProfit.setText((int)cost+" 원");
     }
 
     // get Image of the input address

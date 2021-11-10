@@ -75,6 +75,8 @@ public class MainActivity extends AppCompatActivity {
         // graph
         lineChart = findViewById(R.id.line_solar);
 
+        sendpost();
+
         btn_price.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -91,12 +93,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btn_update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                sendpost();
-            }
-        });
+//        btn_update.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                sendpost();
+//            }
+//        });
 
 
 
