@@ -28,6 +28,17 @@
             android:layout_marginLeft="30dp"
             android:background="@drawable/s2e_icon"
             android:backgroundTint="@null" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Solar Connection"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="25sp"
+            android:textStyle="bold" />
     </FrameLayout>
 
     <TextView
@@ -45,13 +56,13 @@
         android:id="@+id/linearLayout"
         android:layout_width="338dp"
         android:layout_height="445dp"
-        android:layout_marginBottom="30dp"
         android:background="@drawable/radius"
         android:backgroundTint="@color/light_gray"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/btn_solarPrice"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <com.github.mikephil.charting.charts.LineChart
             android:id="@+id/line_solar"
@@ -161,7 +172,7 @@
         android:layout_marginBottom="18dp"
         android:background="@drawable/radius"
         android:backgroundTint="@color/light_gray"
-        android:text="오늘의 태양광 가격"
+        android:text="태양광 에너지 거래하기"
         android:textColor="@color/app_green"
         android:textSize="18sp"
         android:textStyle="bold"

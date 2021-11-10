@@ -6,7 +6,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -40,107 +42,91 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PriceActivity extends AppCompatActivity {
-    LineChart costChart;
-    Button btn_day, btn_enter;
-    TextView tv_profit;
-
-    ArrayList<SolarCost> solarCost;
+    Button btn_now, btn_1, btn_2, btn_24, btn_sale;
+    TextView tv_profit, tv_price;
+    double price;
+    ArrayList<SaleData> saleDataList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_price);
 
-        btn_day = findViewById(R.id.btn_day);
-        btn_enter = findViewById(R.id.btn_enter);
+        btn_now = findViewById(R.id.btn_now);
+        btn_1 = findViewById(R.id.btn_1);
+        btn_2 = findViewById(R.id.btn_2);
+        btn_24 = findViewById(R.id.btn_24);
+        btn_sale = findViewById(R.id.btn_sale);
         tv_profit = findViewById(R.id.tv_profit);
+        tv_price = findViewById(R.id.tv_solarPrice);
 
-        // list 초기화
-        solarCost = new ArrayList<>();
+        InitializeUserSaleData();
 
-        solarCost.add(new SolarCost("1", "59148"));
-        solarCost.add(new SolarCost("2", "57213"));
-        solarCost.add(new SolarCost("3", "56020"));
-        solarCost.add(new SolarCost("4", "55383"));
-        solarCost.add(new SolarCost("5", "55512"));
-        solarCost.add(new SolarCost("6", "56538"));
-        solarCost.add(new SolarCost("7", "58419"));
-        solarCost.add(new SolarCost("8", "61319"));
-        solarCost.add(new SolarCost("9", "64936"));
-        solarCost.add(new SolarCost("10", "66403"));
+        ListView listView = (ListView)findViewById(R.id.listview);
+        final SaleAdapter saleAdapter = new SaleAdapter(this,saleDataList);
 
-        solarCost.add(new SolarCost("11", "67042"));
-        solarCost.add(new SolarCost("12", "66658"));
-        solarCost.add(new SolarCost("13", "66540"));
-        solarCost.add(new SolarCost("14", "68110"));
-        solarCost.add(new SolarCost("15", "69384"));
-        solarCost.add(new SolarCost("16", "70692"));
-        solarCost.add(new SolarCost("17", "71784"));
-        solarCost.add(new SolarCost("18", "71873"));
-        solarCost.add(new SolarCost("19", "71528"));
-        solarCost.add(new SolarCost("20", "71006"));
-
-        solarCost.add(new SolarCost("21", "69358"));
-        solarCost.add(new SolarCost("22", "66006"));
-        solarCost.add(new SolarCost("23", "62740"));
-        solarCost.add(new SolarCost("24", "60348"));
+        listView.setAdapter(saleAdapter);
 
 
-        // graph
-        costChart = findViewById(R.id.costChart);
-
-        btn_day.setOnClickListener(new View.OnClickListener() {
+        btn_now.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                spCostChart();
-            }
-        });
-
-        btn_enter.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                double price = 1.8 * 60348;
+                tv_price.setText("현재 예상 판매가: 71.78 원/KWh");
+                price = 180 * 71.78;
                 price = Math.round(price*100)/100.0;
-                tv_profit.setText(Double.toString(price)+" 원");
+                tv_profit.setText(price+" 원");
+                Log.d("HELLO", "Button now Clicked");
+            }
+        });
+
+        btn_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_price.setText("1시간 뒤 예상 판매가: 71.87 원/KWh");
+                price = 180 * 71.87;
+                price = Math.round(price*100)/100.0;
+                tv_profit.setText(price+" 원");
+                Log.d("HELLO", "Button1 Clicked");
+            }
+        });
+
+        btn_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_price.setText("2시간 뒤 예상 판매가: 71.52 원/KWh");
+                price = 180 * 71.52;
+                price = Math.round(price*100)/100.0;
+                tv_profit.setText(price+" 원");
+                Log.d("HELLO", "Button2 Clicked");
+            }
+        });
+
+        btn_24.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tv_price.setText("내일 예상 판매가: 72.67 원/KWh");
+                price = 180 * 72.67;
+                price = Math.round(price*100)/100.0;
+                tv_profit.setText(price+" 원");
+                Log.d("HELLO", "Button24 Clicked");
+            }
+        });
+
+        btn_sale.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(PriceActivity.this,"판매 화면으로 이동합니다.",Toast.LENGTH_LONG).show();
             }
         });
     }
 
+    public void InitializeUserSaleData(){
+        saleDataList = new ArrayList<SaleData>();
 
-    private List<Entry> solarValue(){
-        List<Entry> sps = new ArrayList<>();
-
-        for (int i=0; i<solarCost.size();i++) {
-            sps.add(new Entry((float)i, Integer.parseInt(solarCost.get(i).getCost())));
-        }
-
-        return sps;
+        saleDataList.add(new SaleData("unknown1",50));
+        saleDataList.add(new SaleData("unknown2",120));
+        saleDataList.add(new SaleData("unknown3",30));
+        saleDataList.add(new SaleData("unknown4",170));
     }
-
-
-    private void spCostChart(){
-        LineDataSet score = new LineDataSet(solarValue(),"태양광 발전량 예측 가격");
-        score.setAxisDependency(YAxis.AxisDependency.LEFT);
-
-        List<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
-        dataSets.add(score);
-        LineData data = new LineData(dataSets);
-        costChart.setData(data);
-        costChart.invalidate(); // refresh
-
-        // the labels that should be drawn on the XAxis
-        String[] labels = new String[solarCost.size()];
-        for(int i=0; i<solarCost.size();i++){
-            labels[i] = solarCost.get(i).getTime();
-        }
-
-        XAxis xAxis = costChart.getXAxis();
-        xAxis.setValueFormatter(new IndexAxisValueFormatter(labels));
-        Legend legend = costChart.getLegend();
-        legend.setEnabled(false);
-        Description description = costChart.getDescription();
-        description.setEnabled(false);
-    }
-
 
 }

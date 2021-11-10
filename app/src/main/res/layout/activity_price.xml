@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="오늘의 태양광 가격"
+            android:text="태양광 에너지 거래하기"
             android:textColor="@color/white"
             android:textSize="20sp"
             android:textStyle="bold" />
@@ -44,94 +44,142 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="60,348 원"
-        android:textColor="@color/white"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
-
-    <TextView
-        android:id="@+id/tv_rate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="20dp"
-        android:text="-0.00%"
-        android:textColor="@color/mint"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
-
-    <com.github.mikephil.charting.charts.LineChart
-        android:id="@+id/costChart"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
         android:layout_marginTop="10dp"
-        app:layout_constraintTop_toBottomOf="@+id/tv_rate" />
-
-    <Button
-        android:id="@+id/btn_day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@color/background"
-        android:text="day"
+        android:text="현재 판매가: 71.78 원/KWh"
         android:textColor="@color/white"
         android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/costChart" />
-
-    <TextView
-        android:id="@+id/tv_calculate"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
-        android:text="Calculator"
-        android:textColor="@color/white"
-        android:textSize="22sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_day" />
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout2" />
 
     <TextView
         android:id="@+id/tv_caldis"
         android:layout_width="350dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="5dp"
         android:text="저장된 태양광 에너지로 얼마의 수익을 낼 수 있을지 계산해보세요."
         android:textColor="@color/text_gray"
-        android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="12sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_calculate" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_solarPrice" />
 
     <EditText
         android:id="@+id/tv_profit"
-        android:layout_width="230dp"
+        android:layout_width="355dp"
         android:layout_height="40dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/radius"
         android:backgroundTint="@color/light_gray"
         android:text="0 원"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_caldis" />
 
     <Button
-        android:id="@+id/btn_enter"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="30dp"
+        android:id="@+id/btn_sale"
+        android:layout_width="355dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="40dp"
         android:background="@drawable/radius"
-        android:backgroundTint="@color/light_gray"
-        android:text="Enter"
+        android:text="판매하기"
+        android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="355dp"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_profit">
+
+        <Button
+            android:id="@+id/btn_now"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="실시간" />
+
+        <Button
+            android:id="@+id/btn_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1시간 후" />
+
+        <Button
+            android:id="@+id/btn_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2시간 후" />
+
+        <Button
+            android:id="@+id/btn_24"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="24시간 후" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/list_layout"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/user"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="10dp"
+            android:layout_weight="4"
+            android:text="user name"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+
+        <TextView
+            android:id="@+id/saleAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="20dp"
+            android:layout_weight="4"
+            android:text="판매량"
+            android:textAlignment="textEnd"
+            android:textColor="@color/white"
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/list_layout">
+
+
+    </ListView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
