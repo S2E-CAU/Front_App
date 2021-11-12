@@ -103,11 +103,13 @@ public class RoofActivity extends AppCompatActivity {
 
     private void setTextView(String number){
         int num = Integer.parseInt(number);
-        int pv_num = num * 8;
-        int price = 80 * num;
-        double predict_amount = (double)num * 13.7;
-        predict_amount = Math.ceil(predict_amount);
+        int pv_num = num * 6;
+        int price = 11 * pv_num;
+        double predict_amount = (double)pv_num * 1.37;
+        // price = Math.round(price*100)/100.0;
+        predict_amount = Math.round(predict_amount*100)/100.0;
         double cost = predict_amount * 71.873 *30;
+        cost = Math.round(cost*100)/100.0;
         tv_num.setText(pv_num+" 개");
         tv_cost.setText(price+" 만원");
         tv_pv.setText(predict_amount + " KWh");

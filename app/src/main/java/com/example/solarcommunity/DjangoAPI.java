@@ -10,7 +10,7 @@ import retrofit2.http.Part;
 
 public interface DjangoAPI {
     String DJANGO_SITE="http://10.0.2.2:8000/";
-    //String DJANGO_SITE="http://ec2-13-125-127-153.ap-northeast-2.compute.amazonaws.com";
+    //String DJANGO_SITE="http://ec2-13-125-86-184.ap-northeast-2.compute.amazonaws.com";
 
     @POST("api/map")
     Call <ResponseBody> uploadFile(@Body String address);

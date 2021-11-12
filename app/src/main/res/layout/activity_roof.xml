@@ -41,10 +41,9 @@
     </FrameLayout>
 
 
-
     <LinearLayout
         android:id="@+id/linearLayout2"
-        android:layout_width="314dp"
+        android:layout_width="340dp"
         android:layout_height="170dp"
         android:layout_marginTop="15dp"
         android:background="@drawable/radius"
@@ -128,7 +127,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:text="예상 발전량 (일)"
+                android:text="일 예상 발전량"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />
@@ -159,7 +158,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_weight="3"
                 android:gravity="center_vertical"
-                android:text="예상 수익 (월)"
+                android:text="월 평균 수익"
                 android:textColor="#000000"
                 android:textSize="18sp"
                 android:textStyle="bold" />

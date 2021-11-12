@@ -71,8 +71,8 @@ public class PriceActivity extends AppCompatActivity {
         btn_now.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_price.setText("현재 예상 판매가: 71.78 원/KWh");
-                price = 180 * 71.78;
+                tv_price.setText("현재 판매가: 77.51 원/kWh");
+                price = 180 * 77.51;
                 price = Math.round(price*100)/100.0;
                 tv_profit.setText(price+" 원");
                 Log.d("HELLO", "Button now Clicked");
@@ -82,8 +82,8 @@ public class PriceActivity extends AppCompatActivity {
         btn_1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_price.setText("1시간 뒤 예상 판매가: 71.87 원/KWh");
-                price = 180 * 71.87;
+                tv_price.setText("1시간 뒤 예상 판매가: 80.56 원/kWh");
+                price = 180 * 80.56;
                 price = Math.round(price*100)/100.0;
                 tv_profit.setText(price+" 원");
                 Log.d("HELLO", "Button1 Clicked");
@@ -93,8 +93,8 @@ public class PriceActivity extends AppCompatActivity {
         btn_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_price.setText("2시간 뒤 예상 판매가: 71.52 원/KWh");
-                price = 180 * 71.52;
+                tv_price.setText("2시간 뒤 예상 판매가: 75.35 원/kWh");
+                price = 180 * 75.35;
                 price = Math.round(price*100)/100.0;
                 tv_profit.setText(price+" 원");
                 Log.d("HELLO", "Button2 Clicked");
@@ -104,8 +104,8 @@ public class PriceActivity extends AppCompatActivity {
         btn_24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tv_price.setText("내일 예상 판매가: 72.67 원/KWh");
-                price = 180 * 72.67;
+                tv_price.setText("내일 예상 판매가: 75.24 원/kWh");
+                price = 180 * 75.24;
                 price = Math.round(price*100)/100.0;
                 tv_profit.setText(price+" 원");
                 Log.d("HELLO", "Button24 Clicked");

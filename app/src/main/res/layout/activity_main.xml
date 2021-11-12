@@ -124,7 +124,7 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="2"
-                    android:text="106.0W"
+                    android:text="1.06kW"
                     android:textColor="@color/app_black"
                     android:textSize="30sp"
                     android:textStyle="bold" />
@@ -154,7 +154,7 @@
                     android:layout_height="0dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="2"
-                    android:text="1.8KWh"
+                    android:text="8.2kWh"
                     android:textColor="@color/app_black"
                     android:textSize="30sp"
                     android:textStyle="bold" />
