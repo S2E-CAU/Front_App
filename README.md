@@ -2,7 +2,9 @@
 Solar Connection - 태양광 프로슈머를 위한 비즈니스 플랫폼 제작 안드로이드
 
 [BackEnd - Django](https://github.com/S2E-CAU/Backend)
+
 [태양광 가격 예측](https://github.com/S2E-CAU/Prediction)
+
 [지붕 검출](https://github.com/S2E-CAU/SemanticSegmentation)
 
 ### 1. 플랫폼 네트워크
