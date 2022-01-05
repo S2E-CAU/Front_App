@@ -10,11 +10,7 @@ Solar Connection - 태양광 프로슈머를 위한 비즈니스 플랫폼 제�
 |박일상|태양 추적 태양광 패널 제작, 아두이노|
 |윤서하|태양광 발전량 측정, 프론트엔드/백엔드 개발|
 
-[BackEnd - Django](https://github.com/S2E-CAU/Backend)
-
-[태양광 가격 예측](https://github.com/S2E-CAU/Prediction)
-
-[지붕 검출](https://github.com/S2E-CAU/SemanticSegmentation)
+[BackEnd - Django](https://github.com/S2E-CAU/Backend) | [태양광 가격 예측](https://github.com/S2E-CAU/Prediction) | [지붕 검출](https://github.com/S2E-CAU/SemanticSegmentation)
 
 ### 1. 플랫폼 네트워크
 ![S2E_플랫폼네트워크](https://user-images.githubusercontent.com/60412023/148164123-bec67afd-18fc-4647-b799-c533fa14ca3a.png)
