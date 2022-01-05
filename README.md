@@ -1,5 +1,9 @@
 # 2021 실전문제연구단 프로젝트
-Solar Connection - 태양광 프로슈머를 위한 비즈니스 플랫폼 제작
+Solar Connection - 태양광 프로슈머를 위한 비즈니스 플랫폼 제작 안드로이드
+
+[BackEnd - Django](https://github.com/S2E-CAU/Backend)
+[태양광 가격 예측](https://github.com/S2E-CAU/Prediction)
+[지붕 검출](https://github.com/S2E-CAU/SemanticSegmentation)
 
 ### 1. 플랫폼 네트워크
 ![S2E_플랫폼네트워크](https://user-images.githubusercontent.com/60412023/148164123-bec67afd-18fc-4647-b799-c533fa14ca3a.png)
