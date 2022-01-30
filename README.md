@@ -8,7 +8,7 @@ Solar Connection - 태양광 프로슈머를 위한 비즈니스 플랫폼 제�
 |김민구|지붕 검출, 태양광 에너지 가격 예측|
 |김민서|데이터셋 수집, UI/UX 디자인|
 |박일상|태양 추적 태양광 패널 제작, 아두이노|
-|윤서하|태양광 발전량 측정, 프론트엔드/백엔드 개발|
+|윤서하|태양광 발전량 측정, 모바일 클라이언트/백엔드 개발|
 
 [BackEnd - Django](https://github.com/S2E-CAU/Backend) | [태양광 가격 예측](https://github.com/S2E-CAU/Prediction) | [지붕 검출](https://github.com/S2E-CAU/SemanticSegmentation)
 
